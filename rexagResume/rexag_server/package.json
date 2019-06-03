@@ -1,0 +1,30 @@
+{
+  "name": "rexag_server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "captchapng2": "^1.0.3",
+    "fast-xml-parser": "^3.12.16",
+    "koa": "^2.7.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-formidable": "^1.1.0",
+    "koa-mysql-session": "0.0.2",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.10.1",
+    "koa-session-minimal": "^3.0.4",
+    "koa-socket": "^4.4.0",
+    "koa-static": "^5.0.0",
+    "koa2-cors": "^2.0.6",
+    "mysql": "^2.16.0",
+    "nodemon": "^1.18.11",
+    "request": "^2.88.0",
+    "xml2js": "^0.4.19"
+  }
+}

@@ -1,0 +1,74 @@
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+p,
+ul,
+li,
+form,
+button,
+input,
+textarea,
+a {
+  margin: 0;
+  padding: 0;
+  color: #424242;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+strong {
+  font-weight: normal;
+}
+
+.spot__after::after {
+  content: "·";
+  margin: 0 0.4em;
+  color: #424242;
+}
+
+.w-e-text {
+  box-sizing: border-box;
+}
+
+.w-e-text::-webkit-scrollbar-thumb {
+  border-radius: 2em;
+}
+
+.w-e-text::-webkit-scrollbar {
+  width: 10px;
+  height: 0;
+}
+
+.w-e-text::-webkit-scrollbar-thumb {
+  background-color: #56975b;
+  background-clip: padding-box;
+  min-height: 10px;
+}
+
+.w-e-text ol,
+.w-e-text ul {
+  padding: 0 10px;
+  margin: 0;
+  background-color: rgba(146, 133, 59, 0.3);
+}
+
+.w-e-text ol {
+  list-style: decimal;
+}
+
+.w-e-text ul {
+  list-style: circle;
+}
