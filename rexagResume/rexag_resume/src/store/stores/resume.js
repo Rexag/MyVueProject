@@ -7,14 +7,33 @@ let user = {
   headpic: '../static/img/rexag_pic.jpg',
   rexagpic: '../static/img/rexag_pic.jpg',
   autograph: 'keep new keep doing',
-  bolg_link: 'http://www.rexag.site'
+  bolg_link: 'https://www.rexag.site'
+}
+
+let routerName = {
+  pcRouter: {
+    home: '/pcHome',
+    info: '/pcInfo',
+    exp: '/pcExp',
+    work: '/pcWorks',
+    skills: '/pcSkills',
+    contact: '/pcContact'
+  },
+  moveRouter: {
+    home: '/moveHome',
+    info: '/moveInfo',
+    exp: '/moveExp',
+    work: '/moveWorks',
+    skills: '/moveSkills',
+    contact: '/moveContact'
+  }
 }
 
 let degree = [
   { id: 0, zh_name: '初学', en_name: 'Beginner' },
   { id: 1, zh_name: '熟悉', en_name: 'Familiar' },
   { id: 2, zh_name: '掌握', en_name: 'Grasp' },
-  { id: 3, zh_name: '擅长', en_name: 'Good At' },
+  { id: 3, zh_name: '擅长', en_name: 'GoodAt' },
   { id: 4, zh_name: '精通', en_name: 'Proficient' }
 ]
 
@@ -22,19 +41,25 @@ let fontEnd = [
   { id: 0, name: 'HTML5', degree: [{ id: 0, show: 1 }, { id: 1, show: 1 }, { id: 2, show: 1 }, { id: 3, show: 1 }, { id: 4, show: 0 }] },
   { id: 1, name: 'CSS3', degree: [{ id: 0, show: 1 }, { id: 1, show: 1 }, { id: 2, show: 1 }, { id: 3, show: 1 }, { id: 4, show: 0 }] },
   { id: 2, name: 'JavsScript', degree: [{ id: 0, show: 1 }, { id: 1, show: 1 }, { id: 2, show: 1 }, { id: 3, show: 1 }, { id: 4, show: 1 }] },
-  { id: 3, name: 'JQuery', degree: [{ id: 0, show: 1 }, { id: 1, show: 1 }, { id: 2, show: 1 }, { id: 3, show: 0 }, { id: 4, show: 0 }] },
-  { id: 4, name: 'Vue', degree: [{ id: 0, show: 1 }, { id: 1, show: 1 }, { id: 2, show: 1 }, { id: 3, show: 1 }, { id: 4, show: 0 }] }
+  { id: 3, name: 'Vue', degree: [{ id: 0, show: 1 }, { id: 1, show: 1 }, { id: 2, show: 1 }, { id: 3, show: 1 }, { id: 4, show: 0 }] },
+  { id: 4, name: 'JQuery', degree: [{ id: 0, show: 1 }, { id: 1, show: 1 }, { id: 2, show: 1 }, { id: 3, show: 0 }, { id: 4, show: 0 }] }
 ]
 
 let backEnd = [
   { id: 0, name: 'C#', degree: [{ id: 0, show: 1 }, { id: 1, show: 1 }, { id: 2, show: 1 }, { id: 3, show: 1 }, { id: 4, show: 0 }] },
-  { id: 1, name: 'Node', degree: [{ id: 0, show: 1 }, { id: 1, show: 1 }, { id: 2, show: 1 }, { id: 3, show: 0 }, { id: 4, show: 0 }] },
+  { id: 1, name: 'NodeJS', degree: [{ id: 0, show: 1 }, { id: 1, show: 1 }, { id: 2, show: 1 }, { id: 3, show: 0 }, { id: 4, show: 0 }] },
   { id: 2, name: 'SQL Server', degree: [{ id: 0, show: 1 }, { id: 1, show: 1 }, { id: 2, show: 1 }, { id: 3, show: 1 }, { id: 4, show: 0 }] },
   { id: 3, name: 'MySQL', degree: [{ id: 0, show: 1 }, { id: 1, show: 1 }, { id: 2, show: 1 }, { id: 3, show: 0 }, { id: 4, show: 0 }] },
   { id: 4, name: 'MongoDB', degree: [{ id: 0, show: 1 }, { id: 1, show: 1 }, { id: 2, show: 0 }, { id: 3, show: 0 }, { id: 4, show: 0 }] }
 ]
 
 let otherSkill = [
+  { id: 0, name: 'TypeScript', degree: [{ id: 0, show: 1 }, { id: 1, show: 1 }, { id: 2, show: 0 }, { id: 3, show: 0 }, { id: 4, show: 0 }] },
+  { id: 1, name: 'Koa', degree: [{ id: 0, show: 1 }, { id: 1, show: 1 }, { id: 2, show: 1 }, { id: 3, show: 0 }, { id: 4, show: 0 }] },
+  { id: 2, name: 'Web Socket', degree: [{ id: 0, show: 1 }, { id: 1, show: 1 }, { id: 2, show: 1 }, { id: 3, show: 0 }, { id: 4, show: 0 }] }
+]
+
+let DataBase = [
   { id: 0, name: 'TypeScript', degree: [{ id: 0, show: 1 }, { id: 1, show: 1 }, { id: 2, show: 0 }, { id: 3, show: 0 }, { id: 4, show: 0 }] },
   { id: 1, name: 'Koa', degree: [{ id: 0, show: 1 }, { id: 1, show: 1 }, { id: 2, show: 1 }, { id: 3, show: 0 }, { id: 4, show: 0 }] },
   { id: 2, name: 'Web Socket', degree: [{ id: 0, show: 1 }, { id: 1, show: 1 }, { id: 2, show: 1 }, { id: 3, show: 0 }, { id: 4, show: 0 }] }
@@ -79,7 +104,7 @@ let expWork = [
     en_worktime: '2017-06-21 ~ 2018-08-01',
     zh_department: '资讯部',
     en_department: 'Information Department',
-    position: 'MES 助理工程师',
+    zh_position: 'MES 助理工程师',
     en_position: 'MES Assistant Engineer',
     zh_KeyWord: 'C#、WPF、WinForm、Web Service、SQL Server、Oracle、SVN、MES',
     en_KeyWord: 'C#、WPF、WinForm、Web Service、SQL Server、Oracle、SVN、MES',
@@ -100,7 +125,7 @@ let expWork = [
     en_worktime: '2016-06-15 ~ 2017-06-02',
     zh_department: '生产部',
     en_department: 'Production Department',
-    position: '生产技术员',
+    zh_position: '生产技术员',
     en_position: 'Production Technician',
     zh_KeyWord: '初次接触编程、C++、MES、JavaScript、PLC、WPF、SAP、工业4.0',
     en_KeyWord: 'First Contact Programming、C++、MES、JavaScript、PLC、WPF、SAP、Industry 4.0',
@@ -181,34 +206,34 @@ let works = [
   {
     worksID: 0,
     zh_proName: 'web前端工程师简历',
-    en_proName: 'Resume of Web Front End Engineer',
+    en_proName: 'Resume Project',
     zh_proIntroduction: '本简历初版，项目使用vue-cli2.0，通过webpack进行项目架构生成和打包，使用Vue，Vuex进行组件开发和状态管理。',
     en_proIntroduction: 'First edition of this resume,The project uses vue-cli2.0,Project architecture generation and packaging through webpack,Using Vue and Vuex for Component development and state management',
-    proHerf: 'http://www.rexag.cn'
+    proHerf: 'https://rexag.cn'
   },
   {
     worksID: 1,
     zh_proName: 'web前端工程师博客',
-    en_proName: 'Blog of Web Front End Engineer',
-    zh_proIntroduction: '项目使用vue-cli2.0，通过webpack进行项目架构生成和打包，使用Vue，Vuex进行前端组件开发和状态管理,使用Axios进行异步请求。服务端基于node koa + koa-router + web socket + mysql构建',
-    en_proIntroduction: 'The project uses vue-cli2.0,Project architecture generation and packaging through webpack,Using Vue and Vuex for Component development and state management,server based on node koa + koa-router + web socket + mysql',
-    proHerf: 'http://www.rexag.site'
+    en_proName: 'Blog Project',
+    zh_proIntroduction: '项目基于Vue-Cli3.0、Vue、Vuex、Vue-router、Axios进行开发，通过crypto进行MS5加密。服务端使用NodeJS的koa框架进行服务器搭建，文件响应和上传。数据库使用MySQL，使用Jsonwentoken进行登陆状态验证',
+    en_proIntroduction: "The project is based on Vue-Cli 3.0, Vue, Vuex, Vue-router and Axios, and MS5 is encrypted by crypto. The server uses NodeJS's koa framework to build the server, respond to and upload files. The database uses MySQL and Jsonwentoken for login status verification",
+    proHerf: 'https://rexag.site'
   },
   {
     worksID: 2,
     zh_proName: '前端练习项目(js、jq、node、vue)',
-    en_proName: 'Front-end exercises (js、jq、node、vue)',
+    en_proName: 'exercises Project',
     zh_proIntroduction: '新知识点的小项目练习，主要是静态页面练习，js对象式、函数式、原型式编程，基于jq的动态效果，基于js或jq的小游戏，H5、CSS3的API练习，node koa项目(音乐播放网站服务端、web聊天室服务端、我的博客服务端)，vue项目练习(移动端新闻阅读以及在线购物小项目,我的简历网站和我的博客网站)',
     en_proIntroduction: 'Small project exercises for new knowledge points, mainly static page exercises,JS object-oriented, functional, prototype programming, jq-based dynamic effects, JS or jq-based games, H5, CSS3 API exercises,node koa Project practice,vue Project practice',
-    proHerf: 'https://github.com/Rexag'
+    proHerf: 'https://github.com/Rexag/MyPractice'
   },
   {
     worksID: 3,
     zh_proName: '佛山顺德妇幼项目',
-    en_proName: 'Foshan Shunde Maternal and Child Project',
+    en_proName: 'Shunde Project',
     zh_proIntroduction: '程式基于NodeJS koa框架，使用TypeScript进行编程。通过Nginx进行http传输和接口反向代理。数据库是MariaDB，ORM框架为TypeOrm，代码管理工具git',
     en_proIntroduction: 'The program is based on NodeJS Koa framework,Programing with TypeScript,using Nginx for interface reverse proxy,database is MariaDB,ORM framework is TypeOrm,Code version control using Git',
-    proHerf: 'https://github.com/Rexag'
+    proHerf: 'https://github.com/Rexag/shundefuyou'
   }
 ]
 
@@ -217,8 +242,14 @@ let concatLinks = [
   { urlID: 1, zh_title: '博客', en_title: 'Blog', name: 'blog', imgUrl: '/static/img/blog.svg', ewmUrl: '/static/img/blog.png' },
   { urlID: 2, zh_title: '微信', en_title: 'Wechat', name: 'wechat', imgUrl: '/static/img/wechat.svg', ewmUrl: '/static/img/ewm_wechat.png' },
   { urlID: 3, zh_title: '微信公众号', en_title: 'Wechat Public Accounts', name: 'pub_wetchat', imgUrl: '/static/img/wechat_pub.svg', ewmUrl: '/static/img/ewm_pubwechat.png' },
-  { urlID: 4, zh_title: 'GitHub', en_title: 'GitHub', name: 'github', imgUrl: '/static/img/github.svg', ewmUrl: '/static/img/ewm_github.png' },
-  { urlID: 5, zh_title: '开源中国', en_title: 'OSChina', name: 'oschina', imgUrl: '/static/img/osc.svg', ewmUrl: '/static/img/ewm_osc.png' }
+  { urlID: 4, zh_title: 'GitHub', en_title: 'GitHub', name: 'github', imgUrl: '/static/img/github.svg', ewmUrl: '/static/img/ewm_github.png', linkUrl: 'https://github.com/Rexag' },
+  { urlID: 5, zh_title: '开源中国', en_title: 'OSChina', name: 'oschina', imgUrl: '/static/img/osc.svg', ewmUrl: '/static/img/ewm_osc.png', linkUrl: 'https://my.oschina.net/u/4080784' }
+]
+
+let moveConcatLinks = [
+  { urlID: 0, zh_title: '博客', en_title: 'Blog', name: 'blog', imgUrl: '/static/img/blog.svg', linkUrl: 'https://rexag.site' },
+  { urlID: 1, zh_title: 'GitHub', en_title: 'GitHub', name: 'github', imgUrl: '/static/img/github.svg', linkUrl: 'https://github.com/Rexag' },
+  { urlID: 2, zh_title: '开源中国', en_title: 'OSChina', name: 'oschina', imgUrl: '/static/img/osc.svg', linkUrl: 'https://my.oschina.net/u/4080784' }
 ]
 
 let concatAuout = {
@@ -231,20 +262,34 @@ let concatAuout = {
 }
 
 let aboutRexag = {
-  zh_introduce1: `您好，我是张洪祥，坐标深圳。我并不是计算机专业,但对编程很感兴趣，所以自学了C#和前端。今后的职业规划是朝着全栈发展（C#、node、前端）,重心将会落在前端。
-      目前在学Vue、小程序。19年下半年准备学习React，加深Node，TypeScript的熟练度。然后深入学习Vue和React的源码。后面感兴趣的还有.NET Core、three.js、Python爬虫等等。
+  zh_introduce1: `我并不是计算机专业,但对编程很感兴趣，所以自学了C#和前端。今后的职业规划是朝着前端发展。 目前在学Vue、小程序。19年下半年准备学习React，加深Node，TypeScript的熟练度。然后深入学习Vue和React的源码。后面感兴趣的还有weex、nuxt.js、three.js、Python爬虫等等。
       前端方面写过响应式页面，pc端页面，移动端练习较少。熟悉MVC、MVVM开发,熟悉自动化,模块化开发。做过一些小demo，如商城，企业网站，视频，音频，评论等都有涉及。`,
-  en_introduce1: `Hello, I am Zhang Hongxiang, Currently living in China Shenzhen. I am not a computer, but I am interested in programming, 
-      so I learned C# and front end myself. Future career planning is toward full-stack development (C#, node, front-end), and the focus will be on the front end. 
-      Currently studying Vue, small program. In the second half of the 19th year, I will study React to deepen the proficiency of Node and TypeScript. 
-      Then learn the source code of Vue and React. Also interested in the back is .NET Core, three.js, Python crawler and more. 
-      The front-end aspect has written responsive pages, pc-side pages, and less practice on the mobile side. Familiar with MVC, MVVM development, 
-      familiar with automation, modular development. Have done some little demos, for example: malls, corporate websites, videos, audio, reviews, etc. are all involved.`,
-  zh_introduce2: '能静下心来专注的去做好每件事，非常喜欢前端，执行力，学习能力都棒棒哒！目前，能做点粗糙设计（比如本网站，以及',
-  en_introduce2: `I can calm down and concentrate on doing everything well. I really like the front end, the execution ability, 
-      and the learning ability are great! Currently, I can do some rough design (such as this website and`,
+  en_introduce1: `I'm not a computer major, but I'm interested in programming, so I taught myself C# and the front end. Future career planning is to move towards the front end. At present, I am learning Vue and small program. 
+  In the second half of nineteen years, we are going to learn React to deepen the proficiency of Node and TypeScript. Then I'll go into the source code of Vue and React. Later, weex, nuxt. js, three. js, Python crawlers and so on are also interesting.
+  Front-end has written responsive pages, PC pages, mobile less practice. Familiar with MVC, MVVM development, familiar with automation, modular development. Have done some small demos, such as malls, corporate websites, videos, audio, reviews and so on.`,
+  zh_introduce2: '能静下心来去做好每件事，非常喜欢前端，执行力，学习能力都很不错！目前能做点粗糙设计（比如本网站和',
+  en_introduce2: `Can calm down to do everything well, like the front-end, execution, learning ability is very good! At present, we can do some rough design (for example, this website, and `,
   zh_introduce3: '更多项目欢迎访问我的',
   en_introduce3: 'More projects welcome to visit '
+}
+
+let moveSkills = {
+  outCircleList: [
+    { id: 0, bg: { backgroundColor: 'rgba(30, 28, 167, 0.6)' }, en_name: 'MiniApp', zh_name: '小程序' },
+    { id: 1, bg: { backgroundColor: 'rgba(8, 119, 184, 0.6)' }, en_name: 'Node', zh_name: 'Node' },
+    { id: 2, bg: { backgroundColor: 'rgba(17, 230, 70, 0.6)' }, en_name: 'MsSQL', zh_name: 'MsSQL' },
+    { id: 3, bg: { backgroundColor: 'rgba(8, 119, 184, 0.6)' }, en_name: 'JQuery', zh_name: 'JQuery' },
+    { id: 4, bg: { backgroundColor: 'rgba(71, 19, 19, 0.6)' }, en_name: 'React', zh_name: 'React' },
+    { id: 5, bg: { backgroundColor: 'rgba(8, 119, 184, 0.6)' }, en_name: 'TypeScript', zh_name: 'TypeScript' },
+    { id: 6, bg: { backgroundColor: 'rgba(71, 19, 19, 0.6)' }, en_name: 'MongoDB', zh_name: 'MongoDB' },
+    { id: 7, bg: { backgroundColor: 'rgba(17, 230, 70, 0.6)' }, en_name: 'CSS3', zh_name: 'CSS3' }
+  ],
+  innerCircleList: [
+    { id: 0, bg: { backgroundColor: 'rgba(184, 45, 130, 0.6)' }, en_name: 'JS', zh_name: 'JS' },
+    { id: 1, bg: { backgroundColor: 'rgba(17, 230, 70, 0.6)' }, en_name: 'Vue', zh_name: 'Vue' },
+    { id: 2, bg: { backgroundColor: 'rgba(17, 230, 70, 0.6)' }, en_name: 'C#', zh_name: 'C#' },
+    { id: 4, bg: { backgroundColor: 'rgba(17, 230, 70, 0.6)' }, en_name: 'H5', zh_name: 'H5' }
+  ]
 }
 
 export default {
@@ -259,5 +304,9 @@ export default {
   expStudy,
   works,
   concatLinks,
-  concatAuout
+  concatAuout,
+  routerName,
+  DataBase,
+  moveConcatLinks,
+  moveSkills
 }

@@ -2,9 +2,9 @@ import resume from './resume'
 const state = () => ({
   rexag: {
     isChinese: true,
-    pagename: 'default',
-    leftVale: [0, 0],
+    pagename: '',
     expShowPage: 'default',
+    userAgent: false,
     user: resume.user,
     degree: resume.degree,
     fontEnd: resume.fontEnd,
@@ -16,7 +16,10 @@ const state = () => ({
     works: resume.works,
     concatLinks: resume.concatLinks,
     concatAuout: resume.concatAuout,
-    aboutRexag: resume.aboutRexag
+    aboutRexag: resume.aboutRexag,
+    routerName: resume.routerName,
+    moveConcatLinks: resume.moveConcatLinks,
+    moveSkills: resume.moveSkills
   }
 })
 
@@ -27,11 +30,11 @@ const actions = {
   async 'setPageName' ({ commit }, pagename) {
     commit('changePageName', pagename)
   },
-  async 'setLeftVale' ({ commit }, leftVale) {
-    commit('changeLeftVale', leftVale)
-  },
   async 'setExpShowPage' ({ commit }, expshowpage) {
     commit('changeExpShowPage', expshowpage)
+  },
+  async 'setUserAgent' ({ commit }, UserAgent) {
+    commit('changeUserAgent', UserAgent)
   }
 }
 const mutations = {
@@ -41,65 +44,74 @@ const mutations = {
   'changePageName' (state, payload) {
     state.rexag.pagename = payload
   },
-  'changeLeftVale' (state, payload) {
-    state.rexag.leftVale = payload
-  },
   'changeExpShowPage' (state, payload) {
     state.rexag.expShowPage = payload
+  },
+  'changeUserAgent' (state, payload) {
+    state.rexag.userAgent = payload
   }
 }
 
 const getters = {
-  'getUser' (state, id) {
+  'getUser' (state) {
     return state.rexag.user
   },
-  'getIsChinese' (state, id) {
+  'getIsChinese' (state) {
     return state.rexag.isChinese
-  },
-  'getHeaderWords' (state, id) {
-    return state.rexag.headerwords
   },
   'getPageName' (state, id) {
     return state.rexag.pagename
   },
-  'getDegree' (state, id) {
+  'getHeaderWords' (state) {
+    return state.rexag.headerwords
+  },
+  'getDegree' (state) {
     return state.rexag.degree
   },
-  'getFontEnd' (state, id) {
+  'getFontEnd' (state) {
     return state.rexag.fontEnd
   },
-  'getBackEnd' (state, id) {
+  'getBackEnd' (state) {
     return state.rexag.backEnd
   },
-  'getOtherSkill' (state, id) {
+  'getOtherSkill' (state) {
     return state.rexag.otherSkill
   },
-  'getLeftVale' (state, id) {
-    return state.rexag.leftVale
-  },
-  'getTimeLine' (state, id) {
+  'getTimeLine' (state) {
     return state.rexag.timeline
+  },
+  'getExpWork' (state) {
+    return state.rexag.expWork
+  },
+  'getExpStudy' (state) {
+    return state.rexag.expStudy
+  },
+  'getWorks' (state) {
+    return state.rexag.works
+  },
+  'getConcatLinks' (state) {
+    return state.rexag.concatLinks
+  },
+  'getMoveConcatLinks' (state) {
+    return state.rexag.moveConcatLinks
+  },
+  'getConcatAuout' (state) {
+    return state.rexag.concatAuout
+  },
+  'getAboutRexag' (state) {
+    return state.rexag.aboutRexag
+  },
+  'getRouterName' (state) {
+    return state.rexag.routerName
   },
   'getExpShowPage' (state, id) {
     return state.rexag.expShowPage
   },
-  'getExpWork' (state, id) {
-    return state.rexag.expWork
+  'getUserAgent' (state, id) {
+    return state.rexag.userAgent
   },
-  'getExpStudy' (state, id) {
-    return state.rexag.expStudy
-  },
-  'getWorks' (state, id) {
-    return state.rexag.works
-  },
-  'getConcatLinks' (state, id) {
-    return state.rexag.concatLinks
-  },
-  'getConcatAuout' (state, id) {
-    return state.rexag.concatAuout
-  },
-  'getAboutRexag' (state, id) {
-    return state.rexag.aboutRexag
+  'getMoveSkills' (state, id) {
+    return state.rexag.moveSkills
   }
 }
 

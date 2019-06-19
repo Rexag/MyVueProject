@@ -1,109 +1,100 @@
 <template>
   <div id="app" @mousewheel="handleScroll">
     <div class="header-wrapper">
-      <rexag-header></rexag-header>
+      <move-header v-if="userAgent"></move-header>
+      <pc-header v-else></pc-header>
     </div>
-    <div class="main-wrapper">
-      <rexagDefault v-show="pagename === 'default'" />
-      <rexagInfo v-show="pagename === 'info'" />
-      <rexagSkill v-show="pagename === 'skill'" />
-      <rexagExperience v-show="pagename === 'exp'" />
-      <rexagWorks v-show="pagename === 'works'" />
-      <rexagConcat v-show="pagename === 'concat'" />
-    </div>
+    <router-view name="move" v-if="userAgent"></router-view>
+    <router-view name="pc" v-else></router-view>
   </div>
 </template>
 <script>
-import rexagDefault from '@/components/rexag-default'
-import rexagConcat from '@/components/rexag-concat'
-import rexagExperience from '@/components/rexag-experience'
-import rexagInfo from '@/components/rexag-info'
-import rexagSkill from '@/components/rexag-skill'
-import rexagWorks from '@/components/rexag-works'
 import { mapGetters } from 'vuex'
-
 export default {
   name: 'App',
-  components: {
-    rexagDefault,
-    rexagConcat,
-    rexagExperience,
-    rexagInfo,
-    rexagSkill,
-    rexagWorks
-  },
-  data () {
-    return {
-      nowIndex: 0,
-      isPageDown: true,
-      pagelistObj: { 'default': 0, 'info': 1, 'skill': 2, 'exp': 3, 'works': 4, 'concat': 5 },
-      pagelistArray: ['default', 'info', 'skill', 'exp', 'works', 'concat']
-    }
+  created () {
+    this.checkUserAgent()
   },
   mounted () {
-    console.log('Hi! 朋友，感谢您愿意调试简历代码。\n如果您有什么建议或者想学习前端，欢迎您访问我的博客 http://www.rexag.site ,\n我们互相学习，共同进步^_^。')
+    console.log('Hi! 朋友，感谢您愿意调试简历代码。\n如果您有什么建议或者想学习前端，欢迎您访问我的博客 https://rexag.site ,\n我们互相学习，共同进步^_^。')
   },
   computed: {
     ...mapGetters({
       pagename: 'global/rexag/getPageName',
-      leftValue: 'global/rexag/getLeftVale'
+      userAgent: 'global/rexag/getUserAgent'
     })
   },
   methods: {
-    changePage (pagename) {
-      this.$store.dispatch('global/rexag/setPageName', pagename)
-    },
     handleScroll (e) {
       let event = e || window.event
-      let index = this.pagelistObj[this.pagename]
-      let seaLeft = this.leftValue[0] - 0
-      let submarineLeft = this.leftValue[1] - 0
-      if (event.wheelDelta) { // 判断浏览器IE，谷歌滑轮事件
+      if (event.wheelDelta) {
         if (event.wheelDelta > 0) {
-          if (index === 0) {
-            this.changePage(this.pagelistArray[5])
-          } else if (index === 2) {
-            if (seaLeft <= 0 || submarineLeft <= 0) {
-              this.changePage(this.pagelistArray[(index - 1)])
-            } else {
-              seaLeft -= 2
-              submarineLeft -= (Math.floor(Math.random() + 0.6) + 2)
-              this.$store.dispatch('global/rexag/setLeftVale', [seaLeft, submarineLeft])
-            }
-          } else {
-            this.changePage(this.pagelistArray[(index - 1)])
-          }
+          this.upSwichPageName()
         }
         if (event.wheelDelta < 0) {
-          if (index === 5) {
-            this.changePage(this.pagelistArray[0])
-          } else if (index === 2) {
-            if (seaLeft >= 198 || submarineLeft >= 280) {
-              this.changePage(this.pagelistArray[(index + 1)])
-            } else {
-              seaLeft += 2
-              submarineLeft += (Math.floor(Math.random() + 0.6) + 2)
-              this.$store.dispatch('global/rexag/setLeftVale', [seaLeft, submarineLeft])
-            }
-          } else {
-            this.changePage(this.pagelistArray[(index + 1)])
-          }
+          this.downSwichPageName()
         }
       } else if (event.detail) { // Firefox滑轮事件
         if (event.detail > 0) {
-          if (index === 0) {
-            this.changePage(this.pagelistArray[5])
-          } else {
-            this.changePage(this.pagelistArray[(index - 1)])
-          }
+          this.upSwichPageName()
         }
         if (event.detail < 0) {
-          if (index === 5) {
-            this.changePage(this.pagelistArray[0])
-          } else {
-            this.changePage(this.pagelistArray[(index + 1)])
-          }
+          this.downSwichPageName()
         }
+      }
+    },
+    upSwichPageName () {
+      switch (this.pagename) {
+        case 'home':
+          this.$router.push('/contact')
+          break
+        case 'info':
+          this.$router.push('/')
+          break
+        case 'skills':
+          this.$router.push('/info')
+          break
+        case 'exp':
+          this.$router.push('/skills')
+          break
+        case 'works':
+          this.$router.push('/exp')
+          break
+        case 'contact':
+          this.$router.push('/works')
+          break
+        default:
+          this.$router.push('/')
+      }
+    },
+    downSwichPageName () {
+      switch (this.pagename) {
+        case 'home':
+          this.$router.push('/info')
+          break
+        case 'info':
+          this.$router.push('/skills')
+          break
+        case 'skills':
+          this.$router.push('/exp')
+          break
+        case 'exp':
+          this.$router.push('/works')
+          break
+        case 'works':
+          this.$router.push('/contact')
+          break
+        case 'contact':
+          this.$router.push('/')
+          break
+        default:
+          this.$router.push('/')
+      }
+    },
+    checkUserAgent () {
+      let flag = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)
+      if (flag) {
+        this.$store.dispatch('global/rexag/setUserAgent', true)
       }
     }
   }
