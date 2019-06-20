@@ -71,6 +71,7 @@ export default {
 }
 .concat__text {
   width: 90%;
+  max-width: 500px;
   margin-bottom: 20px;
   overflow: scroll;
 }
@@ -89,6 +90,7 @@ export default {
 }
 .concat__ul {
   width: 80%;
+  max-width: 500px;
   height: 50px;
   display: flex;
   justify-content: space-around;

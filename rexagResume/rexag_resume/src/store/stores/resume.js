@@ -221,7 +221,7 @@ let works = [
   },
   {
     worksID: 2,
-    zh_proName: '前端练习项目(js、jq、node、vue)',
+    zh_proName: '前端练习项目',
     en_proName: 'exercises Project',
     zh_proIntroduction: '新知识点的小项目练习，主要是静态页面练习，js对象式、函数式、原型式编程，基于jq的动态效果，基于js或jq的小游戏，H5、CSS3的API练习，node koa项目(音乐播放网站服务端、web聊天室服务端、我的博客服务端)，vue项目练习(移动端新闻阅读以及在线购物小项目,我的简历网站和我的博客网站)',
     en_proIntroduction: 'Small project exercises for new knowledge points, mainly static page exercises,JS object-oriented, functional, prototype programming, jq-based dynamic effects, JS or jq-based games, H5, CSS3 API exercises,node koa Project practice,vue Project practice',

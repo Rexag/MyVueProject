@@ -1,44 +1,48 @@
 <template>
   <div class="rexag-works">
-    <div class="works">
-      <ul class="works__list">
-        <li class="works__project" v-for="work in works" :key="work.worksID">
-          <h3 class="project__title">
-            {{ isChinese ? work.zh_proName : work.en_proName }}
-          </h3>
-          <p class="project__introduction">
-            {{ isChinese ? work.zh_proIntroduction : work.en_proIntroduction }}
-          </p>
+    <div class="works__box">
+      <div class="works">
+        <ul class="works__list">
+          <li class="works__project" v-for="work in works" :key="work.worksID">
+            <h3 class="project__title">
+              {{ isChinese ? work.zh_proName : work.en_proName }}
+            </h3>
+            <p class="project__introduction">
+              {{
+                isChinese ? work.zh_proIntroduction : work.en_proIntroduction
+              }}
+            </p>
+            <a
+              class="project__link"
+              :href="work.proHerf"
+              :title="work.proHerf"
+              target="_blank"
+            >
+              <img
+                src="/static/img/w_link.svg"
+                :alt="isChinese ? '链接' : 'link'"
+                class="project__img"
+              />
+            </a>
+          </li>
+        </ul>
+        <div class="work__more">
+          <span
+            class="control__span control-left"
+            @click="switchWork('left')"
+          ></span>
           <a
-            class="project__link"
-            :href="work.proHerf"
-            :title="work.proHerf"
+            class="more__a"
             target="_blank"
+            href="http://github.com/Rexag"
+            title="http://github.com/Rexag"
+            >GitHub上查看更多</a
           >
-            <img
-              src="/static/img/w_link.svg"
-              :alt="isChinese ? '链接' : 'link'"
-              class="project__img"
-            />
-          </a>
-        </li>
-      </ul>
-      <div class="work__more">
-        <span
-          class="control__span control-left"
-          @click="switchWork('left')"
-        ></span>
-        <a
-          class="more__a"
-          target="_blank"
-          href="http://github.com/Rexag"
-          title="http://github.com/Rexag"
-          >GitHub上查看更多</a
-        >
-        <span
-          class="control__span control-right"
-          @click="switchWork('right')"
-        ></span>
+          <span
+            class="control__span control-right"
+            @click="switchWork('right')"
+          ></span>
+        </div>
       </div>
     </div>
   </div>
@@ -91,17 +95,27 @@ export default {
   height: 100%;
   background: url(/static/img/bg.png) #4b85a0;
 }
+.works__box {
+  width: 100vw;
+  height: calc(100vh - 80px);
+  position: relative;
+  top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .works {
-  position: absolute;
-  top: 15vh;
-  left: 10vw;
-  right: 10vw;
+  min-width: 300px;
+  max-width: 400px;
+  max-height: 500px;
 }
 .works__list {
   transform-style: preserve-3d;
-  width: 80vw;
+  width: 100%;
   padding: 0;
   height: 60vh;
+  max-height: 500px;
+  min-height: 350px;
   transition: transform 2s;
   display: flex;
   justify-content: space-between;
@@ -113,8 +127,8 @@ export default {
   box-sizing: border-box;
   border-radius: 0.375rem;
   padding: 0.625rem;
-  width: 80vw;
-  height: 60vh;
+  width: 100%;
+  height: 100%;
   position: absolute;
   text-align: justify;
   transition: transform 0.5s;

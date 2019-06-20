@@ -42,7 +42,7 @@
     <nav class="page__horizontal" v-show="moveNav">
       <ul class="horizontal__ul">
         <li class="horizontal__li">
-          <router-link to="/home">
+          <router-link to="/">
             {{ isChinese ? "首页" : "Home" }}
           </router-link>
         </li>
@@ -62,7 +62,7 @@
           </router-link>
         </li>
         <li class="horizontal__li">
-          <router-link to="/wprks">
+          <router-link to="/works">
             {{ isChinese ? "作品集" : "Works" }}
           </router-link>
         </li>

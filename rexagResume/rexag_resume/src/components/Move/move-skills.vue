@@ -70,15 +70,17 @@ export default {
 .skill__main {
   width: 100%;
   height: calc(100% - 80px);
-  position: absolute;
+  position: relative;
   top: 80px;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
 }
 .skill__box {
   width: 100vw;
   height: 100vw;
+  position: absolute;
+  top: 0;
   display: flex;
   justify-content: center;
   align-content: center;
@@ -218,7 +220,6 @@ export default {
 .skill__degree {
   width: 80%;
   padding: 40px 10%;
-  margin-bottom: 50px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

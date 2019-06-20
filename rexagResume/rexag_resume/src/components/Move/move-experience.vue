@@ -98,6 +98,7 @@ export default {
   width: 100%;
   height: 116px;
   display: flex;
+  position: relative;
 }
 .time__title {
   width: calc(100% - 116px);
@@ -148,9 +149,10 @@ export default {
   display: flex;
 }
 .li__left {
-  width: calc(100vw - 50% - 58px);
+  width: calc(100vw - 50% - 88px);
   padding-left: 10px;
-  text-align: center;
+  padding-right: 30px;
+  text-align: right;
 }
 .li__right {
   width: calc(100vw - 50% + 38px);
