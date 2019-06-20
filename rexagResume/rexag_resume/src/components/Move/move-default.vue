@@ -21,6 +21,7 @@
           <p class="block__p">
             {{ isChinese ? "一名全栈工程师" : "A Full Stack Engineer" }}
           </p>
+          <h2>我与我周旋久，宁做我</h2>
         </div>
       </div>
     </main>

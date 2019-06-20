@@ -43,7 +43,7 @@
           ></span>
           <div class="block-box">
             <h2 class="block__h2">Hello,I'm rexag</h2>
-            <strong class="block__strong">keep new keep doing</strong>
+            <strong class="block__strong">我与我周旋久，宁做我</strong>
             <p class="block__p">
               {{ isChinese ? "我是张洪祥" : "I'm hongxiang,zhang" }}
             </p>
@@ -226,7 +226,7 @@ export default {
 }
 .block__h2 {
   height: 108px;
-  color: #000;
+  color: rgb(0, 0, 0);
   font-family: myFristFont, SimSun, sans-serif;
   font-size: 70px;
   line-height: 108px;

@@ -91,6 +91,7 @@ export default {
 .defalut__timeline {
   width: 50%;
   height: calc(100% - 50px);
+  max-height: 800px;
   display: flex;
   flex-direction: column;
 }

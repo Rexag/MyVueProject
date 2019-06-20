@@ -29,23 +29,35 @@
       </ul>
     </div>
     <footer class="footer">
-      <refooter></refooter>
+      <div class="copy">
+        <div class="copy__contactinfo">
+          <span class="contactinfo__span spot__after">{{
+            isChinese ? "邮箱 : " + user.email : "Email : " + user.email
+          }}</span>
+          <span class="copy__span">{{
+            isChinese ? "手机 : " + user.phone : "Phone : " + user.phone
+          }}</span>
+          <a class="copy__a" href="http://www.miit.gov.cn" target="_blank">
+            粤ICP备19031207号-2
+          </a>
+        </div>
+        <div class="copy__right">
+          Copyright © 2019 rexag.cn All Rights Reserved
+        </div>
+      </div>
     </footer>
   </div>
 </template>
 <script>
 import { mapGetters } from 'vuex'
-import refooter from './move-footer'
 export default {
   computed: {
     ...mapGetters({
       isChinese: 'global/rexag/getIsChinese',
       moveConcatLinks: 'global/rexag/getMoveConcatLinks',
-      concatAuout: 'global/rexag/getConcatAuout'
+      concatAuout: 'global/rexag/getConcatAuout',
+      user: 'global/rexag/getUser'
     })
-  },
-  components: {
-    refooter
   }
 }
 </script>
@@ -112,6 +124,17 @@ export default {
 }
 .footer {
   width: 100%;
-  height: 100px;
+  position: relative;
+  bottom: 20px;
+}
+.copy {
+  width: 100%;
+  color: #424242;
+  font-size: 14px;
+  text-align: center;
+}
+.copy__a {
+  display: block;
+  color: #424242;
 }
 </style>

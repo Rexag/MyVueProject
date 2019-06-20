@@ -72,19 +72,12 @@ export default {
   height: calc(100% - 80px);
   position: relative;
   top: 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 .skill__box {
-  width: 100vw;
-  height: 100vw;
-  position: absolute;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-content: center;
+  width: 400px;
+  height: 400px;
   position: relative;
+  margin: 0 auto;
 }
 .out__ul {
   width: 300px;
@@ -92,7 +85,8 @@ export default {
   border: 8px dashed #999;
   border-radius: 50%;
   position: absolute;
-  top: calc(100vh / 2 - 300px);
+  left: calc(50% - 158px);
+  top: calc(50% - 158px);
 }
 .out__li {
   width: 60px;
@@ -163,8 +157,8 @@ export default {
   border: 8px dashed #999;
   border-radius: 50%;
   position: absolute;
-  top: calc(100vh / 2 - 150px);
-  left: calc(100vw / 2);
+  top: 50%;
+  left: 50%;
   text-align: center;
   line-height: 50px;
   transform: translateX(-50%) translateY(-50%);
@@ -251,4 +245,7 @@ export default {
 .degree__Proficient {
   background-color: rgba(184, 45, 130, 0.6);
 }
+/* @media screen and (max-width: 1030px){
+
+} */
 </style>
